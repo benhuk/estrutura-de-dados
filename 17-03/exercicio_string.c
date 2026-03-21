@@ -181,7 +181,28 @@ void ex10() {
  * Ex 11 - Receba uma string e a imprima sem as vogais.
  * ============================================================ */
 void ex11() {
+    int i;
+    int j = 0;
+    int tamanho;
+    char palavra[50];
+    char palavrad[50];
+  
+    fgets(palavra,50,stdin);
+    tamanho = strlen(palavra);
 
+    for(i=0;i<tamanho;i++){
+        if(palavra[i] != 'a' && palavra[i] != 'A'
+            && palavra[i] != 'e' && palavra[i] != 'E'
+            && palavra[i] != 'i' && palavra[i] != 'I'
+            && palavra[i] != 'o' && palavra[i] != 'O'
+            && palavra[i] != 'u' && palavra[i] != 'U'){
+            palavrad[j] = palavra[i];
+            j++;
+        }
+        
+    }
+    palavrad[j] = '\0';
+    printf("%s", palavrad);
 }
 
 /* ============================================================
@@ -190,7 +211,30 @@ void ex11() {
  *         todas as vogais da palavra por esse caractere.
  * ============================================================ */
 void ex12() {
+    char palavra[50];
+    int tamanho;
+    int i;
+    int qtd = 0;
+    char substitutuir;
 
+    fgets(palavra,50,stdin);
+    
+    scanf(" %c",&substitutuir);
+    
+    tamanho = strlen(palavra);
+    
+    for(i=0;i<tamanho;i++){
+        if(palavra[i] == 'a' || palavra[i] == 'A'
+            || palavra[i] == 'e' || palavra[i] == 'E'
+            || palavra[i] == 'i' || palavra[i] == 'I'
+            || palavra[i] == 'o' || palavra[i] == 'O'
+            || palavra[i] == 'u' || palavra[i] == 'U'){
+            qtd++;
+            palavra[i] = substitutuir;
+                
+        }
+    }
+    printf("%s",palavra);
 }
 
 /* ============================================================
@@ -198,7 +242,7 @@ void ex12() {
  *         em branco.
  * ============================================================ */
 void ex13() {
-
+    
 }
 
 /* ============================================================
