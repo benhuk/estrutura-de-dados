@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 /*
  * UTFPR - Campus Ponta Grossa
  * Bacharelado em Ciência da Computação
@@ -242,7 +243,18 @@ void ex12() {
  *         em branco.
  * ============================================================ */
 void ex13() {
-    
+    int i;
+    char frase[1000];
+    int tamanho;
+    int tamanhofrase = 0;
+    fgets(frase,1000,stdin);
+    tamanho = strlen(frase);
+    for(i=0;i<tamanho;i++){
+        if(frase[i] == ' '){
+            tamanhofrase++;
+        }
+    }
+    printf("%d", tamanhofrase);
 }
 
 /* ============================================================
@@ -250,7 +262,15 @@ void ex13() {
  *         ASCII de cada caractere. Imprima a string resultante.
  * ============================================================ */
 void ex14() {
-
+    int i;
+    int tamanho;
+    char frase[50];
+    fgets(frase,50,stdin);
+    tamanho  = strlen(frase);
+    for(i=0;i<tamanho;i++){
+        frase[i] = frase[i]+1;
+    }
+    printf("frase+1: %s", frase);
 }
 
 /* ============================================================
@@ -259,7 +279,18 @@ void ex14() {
  *         cujo código ASCII está entre 97 e 122).
  * ============================================================ */
 void ex15() {
-
+    int i;
+    int tamanho;
+    char frase[50];
+    fgets(frase,50,stdin);
+    tamanho = strlen(frase);
+    for(i=0;i<tamanho;i++){
+        if (frase[i] >= 95 && frase[i] <= 122){
+            frase[i] = frase[i]-32;
+        }
+        
+    }
+    printf("%s",frase);
 }
 
 /* ============================================================
@@ -268,6 +299,18 @@ void ex15() {
  * ============================================================ */
 void ex16() {
 
+    int i;
+    int tamanho;
+    char frase[50];
+    fgets(frase,50,stdin);
+    tamanho = strlen(frase);
+    for(i=0;i<tamanho;i++){
+        if (frase[i] >= 65 && frase[i] <= 90){
+            frase[i] = frase[i]+32;
+        }
+        
+    }
+    printf("%s",frase);
 }
 
 /* ============================================================
@@ -275,7 +318,20 @@ void ex16() {
  *         Retire os espaços em branco e escreva o vetor resultante.
  * ============================================================ */
 void ex17() {
-
+    int i;
+    int j = 0;
+    int tamanho;
+    char frase[50];
+    fgets(frase,50,stdin);
+    tamanho = strlen(frase);
+    for(i=0;i<tamanho;i++){
+        if(frase[i] != ' '){
+            frase[j]=frase[i];
+            j++;
+        }
+    }
+    frase[j] = '\n';
+    printf("%s",frase);
 }
 
 /* ============================================================
@@ -284,6 +340,7 @@ void ex17() {
  *         fornecidas pelo usuário.
  * ============================================================ */
 void ex18() {
+    
 
 }
 
