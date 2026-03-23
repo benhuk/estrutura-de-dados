@@ -340,10 +340,26 @@ void ex17() {
  *         fornecidas pelo usuário.
  * ============================================================ */
 void ex18() {
+    char palavra[50];
+    int tamanho;
+    int i;
+    char l1;
+    char l2;
     
-
+    printf("digite a frase:");
+    fgets(palavra,50,stdin);
+    tamanho = strlen(palavra);
+    printf("\ndigite a letra que deseja trocar:");
+    scanf("%c", &l1);
+    printf("\ndigite a letra que deseja substituir:");
+    scanf(" %c", &l2);
+    for(i=0;i<tamanho;i++){
+        if(palavra[i] == l1){
+            palavra [i] = l2;
+        }
+    }
+    printf("%s", palavra);
 }
-
 /* ============================================================
  * Ex 19 - Leia a idade e o primeiro nome de várias pessoas.
  *         Termine quando uma idade negativa for digitada.
@@ -351,7 +367,17 @@ void ex18() {
  *         mais jovens e mais velhas.
  * ============================================================ */
 void ex19() {
-
+    char pessoa[50][50][50];
+    int i,j=0,k = 0, idade =1;
+    while(idade == 1){
+        for(i=0;i<50;i++){
+            printf("digite seu nome:");
+            fgets(pessoa[i][j],50,stdin);
+            j++;
+            fgets(pessoa[i][k],50,stdin);
+            k++;
+        }
+    }
 }
 
 /* ============================================================
